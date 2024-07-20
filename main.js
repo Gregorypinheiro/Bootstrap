@@ -1,37 +1,49 @@
 $(document).ready(function(){
-    $('#telefone').mask('(00) 00000-0000',{
+    $('#telefone').mask('(00) 00000-0000', {
         placeholder: '(__) _____-____'
-    })
+    });
 
-    $('form').validate({
+    $('#cadastro-form').validate({
         rules: {
             nome: {
                 required: true
             },
             email: {
                 required: true,
-                email:true,
+                email: true
             },
             telefone: {
-                required:true
+                required: true
+            },
+            "aceito-termos": {
+                required: true
             }
         },
         messages: {
             nome: {
-                required: 'Por favor insira seu nome'
+                required: 'Por favor, insira seu nome'
             },
-            telefone: 'Insira seu telefone',
-            email: 'Insira seu email'
+            email: {
+                required: 'Por favor, insira seu email',
+                email: 'Por favor, insira um email válido'
+            },
+            telefone: {
+                required: 'Por favor, insira seu telefone'
+            },
+            "aceito-termos": {
+                required: 'Você deve aceitar os termos de privacidade'
+            }
         },
         submitHandler: function(form) {
-            console.log(form)
+            console.log(form);
+            alert('Formulário enviado com sucesso!')
         },
-        invalidHandler: function(evento, validador) {
-            let camposIncorretos = validador.
-            numberOfInvalids();
+        invalidHandler: function(event, validator) {
+            let camposIncorretos = validator.numberOfInvalids();
             if (camposIncorretos) {
-                alert(`Existem ${camposIncorretos} campos incorretos`)
+                alert(`Existem ${camposIncorretos} campos incorretos`);
             }
         }
     });
 });
+
