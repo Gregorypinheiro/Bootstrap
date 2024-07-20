@@ -27,3 +27,12 @@ body {
     
 }
 
+.error {
+    color: red;
+    margin-top: 5px;
+    display: flex;
+}
+
+input.error, select.error, textarea.error {
+    border-color: red;
+}
