@@ -36,7 +36,7 @@ $(document).ready(function(){
         },
         submitHandler: function(form) {
             console.log(form);
-            alert('Formulário enviado com sucesso!')
+            alert('Formulário enviado com sucesso!');
         },
         invalidHandler: function(event, validator) {
             let camposIncorretos = validator.numberOfInvalids();
@@ -46,4 +46,3 @@ $(document).ready(function(){
         }
     });
 });
-
